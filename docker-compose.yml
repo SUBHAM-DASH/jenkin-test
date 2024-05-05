@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  # React service
+  react:
+    container_name: react_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+
+  # Add other services here, like backend API or database
